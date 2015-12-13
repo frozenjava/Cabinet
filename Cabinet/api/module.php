@@ -40,7 +40,10 @@ class Cabinet extends Module
 		$contents = array();
 		if (file_exists($dir)) {
 			foreach (preg_grep('/^([^.])/', scandir($dir)) as $file) {
-				$obj = array("name" => $file, "directory" => is_dir($dir . '/' . $file), "path" => realpath($dir . '/' . $file));
+				$obj = array("name" => $file, "directory" => is_dir($dir . '/' . $file),
+				"path" => realpath($dir . '/' . $file), 
+				"permissions" => substr(sprintf('%o', fileperms($dir . '/' . $file)), -4),
+				"size" => filesize($dir . '/' . $file));
 				array_push($contents, $obj);
 			}
 			$success = true;
