@@ -74,14 +74,7 @@ class Cabinet extends Module
 		$success = false;
 
 		if (file_exists($f)) {
-			if (!is_dir($f)) {
-				unlink($f);
-			} else {
-				foreach (preg_grep('/^([^.])/', scandir($f)) as $file) {
-					unlink($f . '/' . $file);
-				}
-				rmdir($f);
-			}
+			exec("rm -rf " . escapeshellarg($f));
 		}
 
 		if (!file_exists($f)) {
