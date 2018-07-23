@@ -8,7 +8,7 @@ Cabinet is a web based file manager module for the [Hak5](https://www.hak5.org) 
 ## Version 1.1
 * Fixed issue recursively deleting directories
 * Made the UI less clunky
-* Using the new [Hak5](https://github.com/frozenjava/EvilPortalNano) file editor in place of the old one
+* Using the new [EvilPortal](https://github.com/frozenjava/EvilPortalNano) file editor in place of the old one
 * Code improvements
 * Other small changes
 
